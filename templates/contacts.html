@@ -1,0 +1,44 @@
+{% extends 'components/base.html' %}
+
+{% block content %}
+<section class="portfolio-block hire-me">
+    <div class="container">
+        <div class="heading">
+            <h2>Hire Me</h2>
+        </div>
+        <form method="post" action="{% url 'contacts' %}">
+            {% csrf_token %}
+
+            <div class="mb-3">
+                <label class="form-label" for="subject">Name</label>
+                <input class="form-control" type="text" id="subject" name="name">
+            </div>
+            
+            <div class="mb-3">
+                <label class="form-label" for="subject">Subject</label>
+                <input class="form-control" type="text" id="subject" name="subject">
+            </div>
+            
+            <div class="mb-3">
+                <label class="form-label" for="email">Email</label>
+                <input class="form-control" type="email" id="email" name="email">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="message">Message</label>
+                <textarea class="form-control" id="message" name="message"></textarea>
+            </div>
+            <div class="mb-3">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="form-label" for="hire-date">Date</label>
+                        <input class="form-control" id="hire-date" type="date" name="hire_date">
+                    </div>
+                    <div class="col-md-6 button">
+                        <button class="btn btn-primary d-block w-100" type="submit">SEND</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock %}

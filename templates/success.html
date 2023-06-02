@@ -1,0 +1,39 @@
+
+{% extends 'components/base.html' %}
+{% block hero-section %}
+{% endblock hero-section %}
+{% load static %}
+
+
+{% block content %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    // Display the pop-up message
+    $('#success-popup').fadeIn(500).delay(500).fadeOut(500);
+});
+</script>
+
+<style>
+#success-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: hwb(205 92% 1%);
+    padding: 20px;
+    border: none
+    box-shadow: 0 0 10px black;
+    display: none;
+}
+
+#success-popup h3,p{
+    color: black;
+}
+</style>
+
+<div id="success-popup">
+    <h3>Success!</h3>
+    <p>Your message was sent successfully.</p>
+</div>
+{% endblock %}
