@@ -1,14 +1,11 @@
 
-{% extends 'components/base.html' %}
-{% block hero-section %}
-{% endblock hero-section %}
-{% load static %}
-{% block content %}
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="/static/assets/css/style.css">
+
 <script>
 $(document).ready(function() {
     // Display the pop-up message
-    $('#success-popup').fadeIn(500).delay(500).fadeOut(500);
+    $('#success-popup').fadeIn(1000).delay(1000).fadeOut(50000);
 });
 </script>
 
@@ -17,21 +14,28 @@ $(document).ready(function() {
     position: fixed;
     top: 50%;
     left: 50%;
+    width: 80%;
+    height: 80%;
+    border-radius: 10px solid black;
     transform: translate(-50%, -50%);
-    background-color: hwb(205 92% 1%);
+    background-color: hwb(63 65% 20%);
     padding: 20px;
-    border: none
-    box-shadow: 0 0 10px black;
-    display: none;
-}
+    border: 2px
+    box-shadow: 5 5 10px black;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    }
 
+#success-popup p {
+    font-size: 20px;
+}
 #success-popup h3,p{
     color: black;
 }
 </style>
 
 <div id="success-popup">
-    <h3>Success!</h3>
-    <p>Your message was sent successfully.</p>
+    <h3 class="success-message">Success!</h3>
+    <p class="success-message">Your message was sent successfully.</p>
 </div>
-{% endblock %}
